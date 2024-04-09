@@ -1,10 +1,10 @@
 ﻿namespace ContosoPizza.Models
 {
-    public class Order
+    public class Order : IContosoModel
     {
         public int ID { get; set; }
 
-        public List<Pizza> Pizzas { get; set; } = new List<Pizza>();
+        public List<int> PizzaIDs { get; set; } = [];
 
         public int UserID { get; set; }
 

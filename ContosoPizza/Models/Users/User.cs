@@ -1,6 +1,6 @@
 ﻿namespace ContosoPizza.Models
 {
-    public class User
+    public class User : IContosoModel
     {
         public int ID { get; set; }
 
