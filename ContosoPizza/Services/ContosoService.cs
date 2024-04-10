@@ -3,19 +3,19 @@ using System.Xml.Linq;
 
 namespace ContosoPizza.Services;
 
-public class ContosoService : IContosoService<IContosoModel>
+public class ContosoService<TModel> : IContosoService<TModel> where TModel : IContosoModel 
 {
-    List<IContosoModel> Models { get; } = [];
+    List<TModel> Models { get; } = [];
     int nextId = 1;
-    ContosoService()
+    public ContosoService()
     {
     }
 
-    public List<IContosoModel> GetAll() => Models;
+    public List<TModel> GetAll() => Models;
 
-    public IContosoModel? Get(int id) => Models.FirstOrDefault<IContosoModel>(p => p.ID == id);
+    public TModel? Get(int id) => Models.FirstOrDefault<TModel>(p => p.ID == id);
 
-    public void Add(IContosoModel item)
+    public void Add(TModel item)
     {
         item.ID = nextId++;
         Models.Add(item);
@@ -30,7 +30,7 @@ public class ContosoService : IContosoService<IContosoModel>
         Models.Remove(item);
     }
 
-    public bool Update(IContosoModel item)
+    public bool Update(TModel item)
     {
         var index = Models.FindIndex(p => p.ID == item.ID);
         if (index == -1)
