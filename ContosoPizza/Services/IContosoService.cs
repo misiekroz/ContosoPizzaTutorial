@@ -31,5 +31,12 @@
         /// <param name="item">Object to be updated</param>
         /// <returns>True if object found and updated by ID, else false</returns>
         public bool Update(T item);
+
+        /// <summary>
+        /// Deletes an item
+        /// </summary>
+        /// <param name="id">ID of an object to be deleted</param>
+        public void Delete(int id);
+
     }
 }
