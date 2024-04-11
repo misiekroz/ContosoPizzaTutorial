@@ -9,5 +9,7 @@
         public int UserID { get; set; }
 
         public int PremiumPoints { get; set; }
+
+        public bool Received { get; set; }
     }
 }
