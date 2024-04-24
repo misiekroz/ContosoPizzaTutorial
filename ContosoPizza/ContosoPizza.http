@@ -43,4 +43,146 @@ Accept: application/json
 
 DELETE {{ContosoPizza_HostAddress}}/pizza/3
 
+####### USERS CONTROLLER ########
+
+GET {{ContosoPizza_HostAddress}}/user
+Accept: application/json
+
 ###
+
+POST {{ContosoPizza_HostAddress}}/user
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "John",
+  "email": "john@example.com",
+  "address": "Crossroad st.",
+  "city": "Utopia",
+  "lastOrder": "2024-04-24T10:42:33.741Z",
+  "ordersCount": 0
+}
+
+###
+
+GET {{ContosoPizza_HostAddress}}/user/1
+Accept: application/json
+
+###
+
+
+PUT {{ContosoPizza_HostAddress}}/user/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Johnny",
+  "email": "john@domain.com",
+  "address": "Crossroad st.",
+  "city": "Utopia",
+  "lastOrder": "2024-04-24T10:42:33.741Z",
+  "ordersCount": 0
+}
+
+###
+
+DELETE {{ContosoPizza_HostAddress}}/user/1
+
+####### PREMIUMUSERS CONTROLLER ########
+
+###
+
+GET {{ContosoPizza_HostAddress}}/premiumuser
+Accept: application/json
+
+###
+
+POST {{ContosoPizza_HostAddress}}/premiumuser?currentUserId=1
+Accept: application/json
+
+###
+
+GET {{ContosoPizza_HostAddress}}/premiumuser/1
+Accept: application/json
+
+###
+
+PUT {{ContosoPizza_HostAddress}}/premiumuser/1
+Accept: application/json
+
+{
+  "id": 0,
+  "name": "Jonney",
+  "email": "johnney@domain.com",
+  "address": "Crossroad st.",
+  "city": "Utopia",
+  "lastOrder": "2024-04-24T16:21:51.115Z",
+  "ordersCount": 0,
+  "points": 0,
+  "joinedTime": "2024-04-24T16:21:51.115Z"
+}
+
+###
+
+DELETE {{ContosoPizza_HostAddress}}/premiumuser/1
+Accept: application/json
+
+####### ORDERS CONTROLLER ########
+
+GET {{ContosoPizza_HostAddress}}/premiumuser
+Accept: application/json
+
+###
+
+POST {{ContosoPizza_HostAddress}}/premiumuser?currentUserId=1
+Accept: application/json
+
+###
+
+GET {{ContosoPizza_HostAddress}}/order
+Accept: application/json
+
+###
+
+POST {{ContosoPizza_HostAddress}}/order
+Accept: application/json
+
+{
+  "id": 0,
+  "pizzaIDs": [
+    1
+  ],
+  "userID": 1,
+  "premiumPoints": 0,
+  "received": false
+}
+
+###
+
+GET {{ContosoPizza_HostAddress}}/order/1
+Accept: application/json
+
+###
+
+PUT {{ContosoPizza_HostAddress}}/order/1
+Accept: application/json
+
+{
+  "id": 1,
+  "pizzaIDs": [
+    1 2
+  ],
+  "userID": 1,
+  "premiumPoints": 0,
+  "received": false
+}
+
+###
+
+DELETE {{ContosoPizza_HostAddress}}/order/1
+Accept: application/json
+
+###
+
+PATCH {{ContosoPizza_HostAddress}}/order/1/received
+Accept: application/json
